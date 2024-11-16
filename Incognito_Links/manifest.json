@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Incognito Link Opener",
+  "version": "1.0",
+  "description": "Opens all links in incognito mode by default",
+  "permissions": [
+    "tabs",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "48": "icon.png"
+  }
+}
